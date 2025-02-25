@@ -9,6 +9,18 @@ The framework provides a structured environment to analyze the impact of differe
 - **Open-Source Implementation**: Enables reproducibility and adaptability for academic and industrial applications.
 - **Configurable Test Instances**: Offers predefined production system test cases or allows integration with external production system structures.
 
+## Simulation-Optimization Framework Architecture
+The software architecture is designed to integrate discrete-event production simulation with mathematical optimization. It consists of three core components:
+- **Simulation Tool**: Used to model production processes, including queues, delays, and order flows.
+- **Optimization Component**: Supports mathematical programming-based approaches to enhance decision-making.
+- **Relational Database**: Stores parameters, simulation results, and performance metrics.
+
+![Simulation Framework Architecture](simulationarchitecture.png)
+
+The architecture is modular and scalable, supporting standalone and distributed experiments. In a distributed setup, multiple clients execute simulations in parallel, each selecting and storing results in a central database. This setup is particularly beneficial for large-scale parameter experiments.
+
+For implementation, **AnyLogic** was selected for simulation, **CPLEX** for optimization, and **SQLite** as the database. These choices were based on technical capabilities, prior research experience, and industry feedback. The SQLite database ensures compatibility with open-source tools while allowing efficient data storage and retrieval. While alternative solutions exist (e.g., SimPy, Arena, Gurobi), a comparative analysis was beyond the project's scope. The framework is open-source, allowing researchers to adapt it with alternative technologies as needed.
+
 ## Simulation Process
 The following diagram illustrates the key steps involved in a simulation run:
 
@@ -25,18 +37,6 @@ The simulation process begins by setting static scenario parameters, which remai
 A critical component is the integration of demand updates and rolling horizon shifts, ensuring continuous adaptation to new information. Demand updates can follow predefined cyclic patterns (e.g., forecast updates) or stochastic distributions (e.g., log-normal arrival rates). Rolling horizon adjustments ensure that future demand periods are incorporated into production planning, mitigating the risk of system overload or underutilization.
 
 To effectively evaluate production behavior, the framework computes key performance indicators (KPIs) such as costs, inventory levels, and tardiness. KPIs are computed using both discrete and continuous statistical methods, with warm-up phase statistics excluded from the final analysis. Stochastic effects, particularly in demand generation and shop floor processing, are introduced using suitable probability distributions to reflect real-world uncertainty.
-
-## Simulation-Optimization Framework Architecture
-The software architecture is designed to integrate discrete-event production simulation with mathematical optimization. It consists of three core components:
-- **Simulation Tool**: Used to model production processes, including queues, delays, and order flows.
-- **Optimization Component**: Supports mathematical programming-based approaches to enhance decision-making.
-- **Relational Database**: Stores parameters, simulation results, and performance metrics.
-
-![Simulation Framework Architecture](simulationarchitecture.png)
-
-The architecture is modular and scalable, supporting standalone and distributed experiments. In a distributed setup, multiple clients execute simulations in parallel, each selecting and storing results in a central database. This setup is particularly beneficial for large-scale parameter experiments.
-
-For implementation, **AnyLogic** was selected for simulation, **CPLEX** for optimization, and **SQLite** as the database. These choices were based on technical capabilities, prior research experience, and industry feedback. The SQLite database ensures compatibility with open-source tools while allowing efficient data storage and retrieval. While alternative solutions exist (e.g., SimPy, Arena, Gurobi), a comparative analysis was beyond the project's scope. The framework is open-source, allowing researchers to adapt it with alternative technologies as needed.
 
 ## Get Started
 1. Clone the repository.
