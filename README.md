@@ -32,6 +32,8 @@ The software architecture is designed to integrate discrete-event production sim
 - **Optimization Component**: Supports mathematical programming-based approaches to enhance decision-making.
 - **Relational Database**: Stores parameters, simulation results, and performance metrics.
 
+![Simulation Framework Architecture](simulationarchitecture.png)
+
 The architecture is modular and scalable, supporting standalone and distributed experiments. In a distributed setup, multiple clients execute simulations in parallel, each selecting and storing results in a central database. This setup is particularly beneficial for large-scale parameter experiments.
 
 For implementation, **AnyLogic** was selected for simulation, **CPLEX** for optimization, and **SQLite** as the database. These choices were based on technical capabilities, prior research experience, and industry feedback. The SQLite database ensures compatibility with open-source tools while allowing efficient data storage and retrieval. While alternative solutions exist (e.g., SimPy, Arena, Gurobi), a comparative analysis was beyond the project's scope. The framework is open-source, allowing researchers to adapt it with alternative technologies as needed.
