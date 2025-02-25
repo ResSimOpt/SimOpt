@@ -38,11 +38,15 @@ A critical component is the integration of demand updates and rolling horizon sh
 
 To effectively evaluate production behavior, the framework computes key performance indicators (KPIs) such as costs, inventory levels, and tardiness. KPIs are computed using both discrete and continuous statistical methods, with warm-up phase statistics excluded from the final analysis. Stochastic effects, particularly in demand generation and shop floor processing, are introduced using suitable probability distributions to reflect real-world uncertainty.
 
-## Get Started
+## Get Started with SimOpt
 1. Clone the repository.
-2. Set up the simulation environment as described in the installation guide.
-3. Configure the test instances or integrate your production system data.
-4. Run simulations and analyze the results.
+2. To view the simulation model download and install Anylogic Personal Learning Edition from https://www.anylogic.com/downloads/ and open the alp file from the repository.
+3. The properties.config file is used to set the path to the sqlite and postgre sql instances.
+4. The simopt.db file must be in read and write access of the simulation model. Easiest way is to leave it in the same directory as the alp file is located.
+  4.1 To view and edit the sqlite database, we recommend the usage of DB Browser for Sqlite (https://sqlitebrowser.org/)
+  4.2 To view and edit the sqlite and postgresql, we recommend the usage of DB Beaver Community Edition (https://dbeaver.io/)
+5. The postgresql database is usually used for large experiments where individual instances of the simulation model are pulling the parameterizations to the own instance and update the processed parameter and storing the KPIs into the result table.
+7. To analyse the simualtion results use the above recommended SQL tools.
 
 ## Project Website
 The development of the simulation framework was part of the Austrian Science Fund granted project "Hybrid Algorithms for Redesigning MRP", please visit the [project website](https://coe-sp.fh-ooe.at/projekte/hybrid-algorithms-for-redesigning-mrp/) for more details.
