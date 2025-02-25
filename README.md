@@ -12,7 +12,7 @@ The framework provides a structured environment to analyze the impact of differe
 ## Simulation Process
 The following diagram illustrates the key steps involved in a simulation run:
 
-![Simulation Process](image.png)
+![Simulation Process](simulationprocess.png)
 
 The selected simulation software must be capable of modeling production systems with queues, delays, dynamic events, and other process and logical components. The production system simulation process should support demand fluctuations, order queues, process delays, order releases, varying machine utilization, and stock booking behavior dynamically during the simulation runtime.
 
